@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .yellow
 
         // API Endpoint
-        let urlString = "https://newsapi.org/v2/top-headlines?country=us&apiKey=e34d110f031548aba6695ce095348693"
+        let urlString = "https://newsapi.org/v2/top-headlines?country=us&apiKey=c630b0429b5c4b2bb8c423519eab5be0"
         let url = URL(string: urlString)
         
         guard url != nil else {
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
                 
                 do {
                     let newsFeed = try decoder.decode(NewsFeed.self, from: data!)
-                    print("RESPONSE -->> \(response)")
                     print("This is JSON result -->> \n\(newsFeed)")
                     
                 } catch {
@@ -44,4 +43,3 @@ class ViewController: UIViewController {
         dataTask.resume()
     }
 }
-

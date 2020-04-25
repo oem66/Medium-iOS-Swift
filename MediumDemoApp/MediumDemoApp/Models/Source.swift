@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct Source: Codable{
+struct Source: Codable {
+    
     var id: String?
     var name: String?
+    
 }

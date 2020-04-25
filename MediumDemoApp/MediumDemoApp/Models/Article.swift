@@ -9,6 +9,7 @@
 import Foundation
 
 struct Article: Codable {
+    
     var source: Source?
     var author: String?
     var title: String?
@@ -17,4 +18,5 @@ struct Article: Codable {
     var urlToImage: String?
     var publishedAt: String?
     var content: String?
+    
 }
