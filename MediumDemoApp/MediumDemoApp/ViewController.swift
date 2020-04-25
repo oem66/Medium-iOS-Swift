@@ -14,13 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .yellow
 
-        
         // API Endpoint
-        let urlString = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-03-21&sortBy=publishedAt&apiKey=e34d110f031548aba6695ce095348693"
+        let urlString = "https://newsapi.org/v2/top-headlines?country=us&apiKey=e34d110f031548aba6695ce095348693"
         let url = URL(string: urlString)
         
         guard url != nil else {
-            debugPrint("URL je nil")
+            debugPrint("URL is nil")
             return
         }
         
