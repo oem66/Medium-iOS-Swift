@@ -15,13 +15,13 @@ struct ContentView: View {
         NavigationView {
             List(countries, id: \.self) { country in
                 HStack(spacing: 10) {
-                    Text(country.name)
+                    Text(country.name ?? "none")
                         .bold()
                         .minimumScaleFactor(0.5)
-                    
+
                     Spacer()
-                    
-                    Text("\(country.population)")
+
+                    Text("\(country.population ?? 0)")
                         .bold()
                         .foregroundColor(.gray)
                 }
