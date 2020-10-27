@@ -25,7 +25,6 @@ class Webservice {
             do {
                 let countries = try! JSONDecoder().decode([Country].self, from: data!)
                 completion(.success(countries))
-                print(countries)
             } catch let jsonError {
                 completion(.failure(jsonError))
             }

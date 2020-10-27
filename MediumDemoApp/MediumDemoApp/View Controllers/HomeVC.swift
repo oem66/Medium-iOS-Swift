@@ -21,6 +21,14 @@ class HomeVC: UIViewController {
         return button
     }()
     
+    let countriesButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Countries", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     var tableViewContainer = UIView()
     
     override func viewDidLoad() {
@@ -34,6 +42,10 @@ class HomeVC: UIViewController {
     @objc func tableViewButtonTapped() {
         debugPrint("Tapped")
         navigationController?.pushViewController(DemoTableViewVC(), animated: true)
+    }
+    
+    @objc func countriesButtonTapped() {
+        navigationController?.pushViewController(CountryVC(), animated: true)
     }
 }
 
@@ -51,7 +63,15 @@ extension HomeVC {
             tableViewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
         
-        tableViewButton.addTarget(self, action: #selector(tableViewButtonTapped), for: .touchUpInside)
+        view.addSubview(countriesButton)
+        NSLayoutConstraint.activate([
+            countriesButton.topAnchor.constraint(equalTo: tableViewButton.bottomAnchor, constant: 20),
+            countriesButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+        ])
+        
+        tableViewButton.addTarget(self,  action: #selector(tableViewButtonTapped), for: .touchUpInside)
+        
+        countriesButton.addTarget(self, action: #selector(countriesButtonTapped), for: .touchUpInside)
     }
 }
 

@@ -1,0 +1,6 @@
+framework module Pods_MediumDemoApp {
+  umbrella header "Pods-MediumDemoApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
