@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import UserNotifications
 
 class HomeVC: UIViewController {
     
@@ -15,17 +16,25 @@ class HomeVC: UIViewController {
     
     let tableViewButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Table", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Demo TableView", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10.0
+        
         return button
     }()
     
     let countriesButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Countries", for: .normal)
-        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Countries", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10.0
+        
         return button
     }()
     
@@ -33,14 +42,16 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUI()
         getCountries()
-        print(countries)
+        enableNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
     }
     
     @objc func tableViewButtonTapped() {
-        debugPrint("Tapped")
         navigationController?.pushViewController(DemoTableViewVC(), animated: true)
     }
     
@@ -51,33 +62,71 @@ class HomeVC: UIViewController {
 
 // MARK: -UI Elements
 extension HomeVC {
-    func setupUI() {
-        view.backgroundColor = .red
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        navigationController?.navigationBar.tintColor = .blue
-        navigationController?.navigationBar.barTintColor = .white
+    private func setupUI() {
+        title = "Home"
+        
+        view.backgroundColor = .secondarySystemBackground
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.barTintColor = .green
         
         view.addSubview(tableViewButton)
         NSLayoutConstraint.activate([
-            tableViewButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-            tableViewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            tableViewButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            tableViewButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tableViewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            tableViewButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            tableViewButton.widthAnchor.constraint(equalToConstant: 60),
+            tableViewButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         view.addSubview(countriesButton)
         NSLayoutConstraint.activate([
-            countriesButton.topAnchor.constraint(equalTo: tableViewButton.bottomAnchor, constant: 20),
-            countriesButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            countriesButton.topAnchor.constraint(equalTo: tableViewButton.bottomAnchor, constant: 30),
+            countriesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            countriesButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            countriesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            countriesButton.widthAnchor.constraint(equalToConstant: 60),
+            countriesButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         tableViewButton.addTarget(self,  action: #selector(tableViewButtonTapped), for: .touchUpInside)
-        
         countriesButton.addTarget(self, action: #selector(countriesButtonTapped), for: .touchUpInside)
+    }
+    
+    private func enableNotifications() {
+        // 1. Ask for permission
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            
+        }
+        
+        // 2. Create the notification content
+        let content = UNMutableNotificationContent()
+        content.title = "Formula 1"
+        content.body = "Mercedes AMG Petronas F1 team has won Constructors championship!"
+        
+        
+        // 3. Create the notification trigger
+        let date = Date().addingTimeInterval(5)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        // 4. Create the request
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        
+        // 5. Register the request
+        center.add(request) { (error) in
+            print(error?.localizedDescription)
+        }
     }
 }
 
 // MARK: -Methods
 extension HomeVC {
-    func getCountries() {
+    private func getCountries() {
         Webservice().getAllCountries { result in
             switch result {
             case .success(let countries):

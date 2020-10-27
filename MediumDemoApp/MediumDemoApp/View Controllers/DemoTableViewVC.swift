@@ -22,10 +22,7 @@ class DemoTableViewVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.barTintColor = .blue
-        self.navigationController?.navigationBar.topItem?.title = "Expence"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .black
     }
 }
 
@@ -53,6 +50,7 @@ extension DemoTableViewVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Table View constraints
 extension DemoTableViewVC {
     func setupUI() {
+        title = "Mostar"
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

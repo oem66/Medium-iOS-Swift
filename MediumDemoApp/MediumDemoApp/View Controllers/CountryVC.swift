@@ -131,14 +131,6 @@ extension CountryVC {
                 print(error.localizedDescription)
             }
         }
-//        countrySort()
-//        print("Europe -> \(europeCountries.count)")
-//        print("North America -> \(northAmericaCountries.count)")
-//        print("South America -> \(southAmericaCountries.count)")
-//        print("Asia -> \(asiaCountries.count)")
-//        print("Africa -> \(africaCountries.count)")
-//        print("Oceania -> \(australiaOceaniaCountries.count)")
-//        print("Polar -> \(antarticaCountries.count)")
         self.tableView.reloadData()
     }
     
