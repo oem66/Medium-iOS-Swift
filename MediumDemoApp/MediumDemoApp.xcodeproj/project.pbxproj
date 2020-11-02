@@ -23,6 +23,7 @@
 		17723C3A2542D527005AC55F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17723C392542D527005AC55F /* Country.swift */; };
 		17723C3E2542D68E005AC55F /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17723C3D2542D68E005AC55F /* APIEndpoints.swift */; };
 		17B99EA225483CA1006834FB /* CountryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B99EA125483CA1006834FB /* CountryDetails.swift */; };
+		17BDB16F254C1B5A00651816 /* ApplePayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BDB16E254C1B5A00651816 /* ApplePayVC.swift */; };
 		17D8609A2546D09600C59DEC /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D860992546D09600C59DEC /* CountryCell.swift */; };
 		17D8609D2546F64400C59DEC /* CountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8609C2546F64400C59DEC /* CountryVC.swift */; };
 		17DFEF3B2454AB2A00EA762B /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFEF3A2454AB2A00EA762B /* Source.swift */; };
@@ -52,6 +53,7 @@
 		17723C392542D527005AC55F /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		17723C3D2542D68E005AC55F /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		17B99EA125483CA1006834FB /* CountryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetails.swift; sourceTree = "<group>"; };
+		17BDB16E254C1B5A00651816 /* ApplePayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayVC.swift; sourceTree = "<group>"; };
 		17D860992546D09600C59DEC /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		17D8609C2546F64400C59DEC /* CountryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryVC.swift; sourceTree = "<group>"; };
 		17DFEF3A2454AB2A00EA762B /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				17678F022475378A00242565 /* DemoTableViewVC.swift */,
 				17D8609C2546F64400C59DEC /* CountryVC.swift */,
 				17B99EA125483CA1006834FB /* CountryDetails.swift */,
+				17BDB16E254C1B5A00651816 /* ApplePayVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				17723C3A2542D527005AC55F /* Country.swift in Sources */,
 				174C033F244ECF2600FDD664 /* ViewController.swift in Sources */,
 				17678F012475342E00242565 /* HomeVC.swift in Sources */,
+				17BDB16F254C1B5A00651816 /* ApplePayVC.swift in Sources */,
 				17678F0524753E7800242565 /* DemoCell.swift in Sources */,
 				174C0345244ECF2600FDD664 /* MediumDemoApp.xcdatamodeld in Sources */,
 				17723C3E2542D68E005AC55F /* APIEndpoints.swift in Sources */,

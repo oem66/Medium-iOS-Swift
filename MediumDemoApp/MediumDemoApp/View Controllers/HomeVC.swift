@@ -38,17 +38,29 @@ class HomeVC: UIViewController {
         return button
     }()
     
+    let applePayRoute: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Apple Pay Screen", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10.0
+        
+        return button
+    }()
+    
     var tableViewContainer = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getCountries()
-        enableNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
+        enableNotifications()
     }
     
     @objc func tableViewButtonTapped() {
@@ -57,6 +69,10 @@ class HomeVC: UIViewController {
     
     @objc func countriesButtonTapped() {
         navigationController?.pushViewController(CountryVC(), animated: true)
+    }
+    
+    @objc func applePayButtonTapped() {
+        navigationController?.pushViewController(ApplePayVC(), animated: true)
     }
 }
 
@@ -90,8 +106,18 @@ extension HomeVC {
             countriesButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
+        view.addSubview(applePayRoute)
+        NSLayoutConstraint.activate([
+            applePayRoute.topAnchor.constraint(equalTo: countriesButton.bottomAnchor, constant: 30),
+            applePayRoute.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            applePayRoute.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            applePayRoute.widthAnchor.constraint(equalToConstant: 60),
+            applePayRoute.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
         tableViewButton.addTarget(self,  action: #selector(tableViewButtonTapped), for: .touchUpInside)
         countriesButton.addTarget(self, action: #selector(countriesButtonTapped), for: .touchUpInside)
+        applePayRoute.addTarget(self, action: #selector(applePayButtonTapped), for: .touchUpInside)
     }
     
     private func enableNotifications() {
@@ -124,7 +150,7 @@ extension HomeVC {
     }
 }
 
-// MARK: -Methods
+// MARK: -API Call Methods
 extension HomeVC {
     private func getCountries() {
         Webservice().getAllCountries { result in
