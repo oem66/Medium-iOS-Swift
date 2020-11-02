@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import UserNotifications
+import AuthenticationServices
 
 class HomeVC: UIViewController {
     
@@ -50,11 +51,18 @@ class HomeVC: UIViewController {
         return button
     }()
     
+    let signInWithApple: UIButton = {
+        let button = UIButton(type: .system)
+        
+        return button
+    }()
+    
     var tableViewContainer = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getCountries()
+        configureLoginButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,10 +82,19 @@ class HomeVC: UIViewController {
     @objc func applePayButtonTapped() {
         navigationController?.pushViewController(ApplePayVC(), animated: true)
     }
+    
+    @objc func tapLoginButton() {
+        let appleIDDetails = ASAuthorizationAppleIDProvider()
+        let request = appleIDDetails.createRequest()
+        request.requestedScopes = [.email, .fullName]
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.performRequests()
+    }
 }
 
 // MARK: -UI Elements
-extension HomeVC {
+extension HomeVC: ASAuthorizationControllerDelegate {
     private func setupUI() {
         title = "Home"
         
@@ -147,6 +164,25 @@ extension HomeVC {
         center.add(request) { (error) in
             print(error?.localizedDescription)
         }
+    }
+    
+    private func configureLoginButton() {
+        let button = ASAuthorizationAppleIDButton()
+        button.center = view.center
+        button.addTarget(self, action: #selector(tapLoginButton), for: .touchUpInside)
+        self.view.addSubview(button)
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let details = authorization.credential as? ASAuthorizationAppleIDCredential {
+            print(details.user)
+            print(details.fullName!)
+            print(details.email!)
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
     }
 }
 
