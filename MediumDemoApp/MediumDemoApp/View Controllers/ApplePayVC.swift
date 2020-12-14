@@ -31,8 +31,14 @@ class ApplePayVC: UIViewController {
         request.merchantCapabilities = .capability3DS
         request.countryCode = "US"
         request.currencyCode = "USD"
+        request.requiredBillingContactFields = [.postalAddress, .phoneNumber, .name]
         
-        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "iPhone 12 Pro 128 GB", amount: 999)]
+        let fare = PKPaymentSummaryItem(label: "Minimum Fare", amount: NSDecimalNumber(string: "9.99"), type: .final)
+        let tax = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(string: "1.00"), type: .final)
+        let total = PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(string: "10.99"), type: .pending)
+        request.paymentSummaryItems = [fare, tax, total]
+        
+//        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "iPhone 12 Pro 128 GB", amount: 999),PKPaymentSummaryItem(label: "iPhone 11 Pro 64 GB", amount: 799), PKPaymentSummaryItem(label: "iPhone X 64 GB", amount: 599), PKPaymentSummaryItem(label: "Apple MacBook Pro 13' 512 GB", amount: 2999),]
         
         return request
     }()

@@ -57,6 +57,18 @@ class HomeVC: UIViewController {
         return button
     }()
     
+    let secureButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Authorized Personel", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10.0
+        
+        return button
+    }()
+    
     var tableViewContainer = UIView()
     
     override func viewDidLoad() {
@@ -91,6 +103,10 @@ class HomeVC: UIViewController {
         controller.delegate = self
         controller.performRequests()
     }
+    
+    @objc func secureButtonTapped() {
+        navigationController?.pushViewController(SecureVC(), animated: true)
+    }
 }
 
 // MARK: -UI Elements
@@ -98,10 +114,10 @@ extension HomeVC: ASAuthorizationControllerDelegate {
     private func setupUI() {
         title = "Home"
         
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .yellow
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.barTintColor = .green
+        navigationController?.navigationBar.barTintColor = .systemPink
         
         view.addSubview(tableViewButton)
         NSLayoutConstraint.activate([
@@ -132,9 +148,19 @@ extension HomeVC: ASAuthorizationControllerDelegate {
             applePayRoute.heightAnchor.constraint(equalToConstant: 40)
         ])
         
+        view.addSubview(secureButton)
+        NSLayoutConstraint.activate([
+            secureButton.topAnchor.constraint(equalTo: applePayRoute.bottomAnchor, constant: 30),
+            secureButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            secureButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            secureButton.widthAnchor.constraint(equalToConstant: 60),
+            secureButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
         tableViewButton.addTarget(self,  action: #selector(tableViewButtonTapped), for: .touchUpInside)
         countriesButton.addTarget(self, action: #selector(countriesButtonTapped), for: .touchUpInside)
         applePayRoute.addTarget(self, action: #selector(applePayButtonTapped), for: .touchUpInside)
+        secureButton.addTarget(self, action: #selector(secureButtonTapped), for: .touchUpInside)
     }
     
     private func enableNotifications() {
