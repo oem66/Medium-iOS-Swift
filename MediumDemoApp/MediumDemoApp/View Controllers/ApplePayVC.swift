@@ -23,6 +23,18 @@ class ApplePayVC: UIViewController {
         return button
     }()
     
+    let completionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Apple Pay", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10.0
+        
+        return button
+    }()
+    
     private var paymentRequest: PKPaymentRequest = {
         let request = PKPaymentRequest()
         request.merchantIdentifier = "merchant.com.omer.MediumDemoApp"
@@ -57,16 +69,24 @@ class ApplePayVC: UIViewController {
         navigationController?.navigationBar.barTintColor = .green
         
         view.addSubview(tapToApplePay)
+        view.addSubview(completionButton)
+        
         NSLayoutConstraint.activate([
             tapToApplePay.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tapToApplePay.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             tapToApplePay.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             tapToApplePay.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             tapToApplePay.widthAnchor.constraint(equalToConstant: 60),
-            tapToApplePay.heightAnchor.constraint(equalToConstant: 40)
+            tapToApplePay.heightAnchor.constraint(equalToConstant: 40),
+            
+            completionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            completionButton.topAnchor.constraint(equalTo: tapToApplePay.bottomAnchor, constant: 20),
+            completionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            completionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
         
         tapToApplePay.addTarget(self, action: #selector(applePayTapped), for: .touchUpInside)
+        completionButton.addTarget(self, action: #selector(completionButtonTapped), for: .touchUpInside)
     }
     
     @objc func applePayTapped() {
@@ -75,6 +95,14 @@ class ApplePayVC: UIViewController {
             controller!.delegate = self
             present(controller!, animated: true) {
                 print("Completed")
+            }
+        }
+    }
+    
+    @objc func completionButtonTapped() {
+        Webservice.fetchFakeData { (message, isGoodOptionToBuy) in
+            if isGoodOptionToBuy {
+                print("Car -> \(message) is good option to buy!")
             }
         }
     }

@@ -31,5 +31,12 @@ class Webservice {
         }.resume()
     }
     
-    
+    static func fetchFakeData(completion: @escaping (String, Bool) -> ()) {
+        print("This print is from completion")
+        
+        let message = "Peugeot 3008"
+        let isGoodOption = true
+        
+        completion(message, isGoodOption)
+    }
 }
