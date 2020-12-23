@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ModalViewControllerDelegate: class {
-    func modalViewController(_ viewController: DelegationModalVC, didUpdateText text: String)
+    func changeTextFromDelegate(_ viewController: DelegationModalVC, didUpdateText text: String)
 }
 
 class DelegationModalVC: UIViewController {
@@ -49,7 +49,7 @@ class DelegationModalVC: UIViewController {
     
     @objc func doneButtonTapped() {
         guard let text = textField.text else { return }
-        delegate?.modalViewController(self, didUpdateText: text)
+        delegate?.changeTextFromDelegate(self, didUpdateText: text)
         dismiss(animated: true, completion: nil)
     }
     

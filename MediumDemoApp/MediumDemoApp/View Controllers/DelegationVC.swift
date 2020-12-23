@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DelegationVC: ViewController {
+class BaseDelegationVC: ViewController {
     
     var textLabel: UILabel = {
         let label = UILabel()
@@ -63,7 +63,7 @@ class DelegationVC: ViewController {
     }
 }
 
-extension DelegationVC: ModalViewControllerDelegate {
+extension BaseDelegationVC: ModalViewControllerDelegate {
     func modalViewController(_ viewController: DelegationModalVC, didUpdateText text: String) {
         textLabel.text = text
     }

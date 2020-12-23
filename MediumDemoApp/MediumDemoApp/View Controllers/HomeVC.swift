@@ -121,7 +121,7 @@ class HomeVC: UIViewController {
     }
     
     @objc func delegationButtonTapped() {
-        navigationController?.pushViewController(DelegationVC(), animated: true)
+        navigationController?.pushViewController(BaseDelegationVC(), animated: true)
     }
 }
 
