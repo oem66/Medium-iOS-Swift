@@ -9,11 +9,14 @@ import UIKit
 
 class CreateAccountViewController: UIViewController, Storyboarded {
 
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: CreateAccountCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+    }
+    
+    private func setupUI() {
+        title = "Create Account"
     }
 }
