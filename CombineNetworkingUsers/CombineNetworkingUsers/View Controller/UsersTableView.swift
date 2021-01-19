@@ -8,33 +8,9 @@
 import UIKit
 import Combine
 
-struct User: Decodable {
-    let name: String
-    let company: Company
-}
-
-struct Company: Decodable {
-    let name: String
-}
-
-class DataManager {
-    
-    private let urlString = "https://jsonplaceholder.typicode.com/users"
-    
-    var usersPublisher: AnyPublisher<[User], Error> {
-        let url = URL(string: urlString)!
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: [User].self, decoder: JSONDecoder())
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-    }
-}
-
 class UsersTableViewController: UITableViewController {
     
     private var usersSubscriber: AnyCancellable?
-    
     private var users = [User]() {
         didSet {
             tableView.reloadData()
@@ -48,7 +24,9 @@ class UsersTableViewController: UITableViewController {
     }
     
     private func setupTableView() {
-        title = "Users"
+        navigationItem.title = "Users"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Countries", style: .plain, target: self, action: #selector(countriesButtonTapped))
         tableView.tableFooterView = UIView()
     }
     
@@ -56,6 +34,12 @@ class UsersTableViewController: UITableViewController {
         usersSubscriber = DataManager().usersPublisher.sink(receiveCompletion: { _ in }, receiveValue: { (users) in
             self.users = users
         })
+    }
+    
+    @objc func countriesButtonTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let countriesVC = storyboard.instantiateViewController(withIdentifier: "CountriesViewController")
+        self.navigationController?.pushViewController(countriesVC, animated: true)
     }
 
 }

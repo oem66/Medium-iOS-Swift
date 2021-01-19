@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A52F5725B5C760004450C3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F5625B5C760004450C3 /* User.swift */; };
+		17A52F5A25B5CB30004450C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F5925B5CB30004450C3 /* NetworkManager.swift */; };
+		17A52F5E25B5CCDD004450C3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F5D25B5CCDD004450C3 /* Country.swift */; };
+		17A52F6125B6CEDE004450C3 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F6025B6CEDE004450C3 /* CountriesViewController.swift */; };
 		17C6DFF725B587D700C304E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6DFF625B587D700C304E4 /* AppDelegate.swift */; };
 		17C6DFF925B587D700C304E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6DFF825B587D700C304E4 /* SceneDelegate.swift */; };
-		17C6DFFB25B587D700C304E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6DFFA25B587D700C304E4 /* ViewController.swift */; };
+		17C6DFFB25B587D700C304E4 /* UsersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6DFFA25B587D700C304E4 /* UsersTableView.swift */; };
 		17C6DFFE25B587D700C304E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C6DFFC25B587D700C304E4 /* Main.storyboard */; };
 		17C6E00025B587DA00C304E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C6DFFF25B587DA00C304E4 /* Assets.xcassets */; };
 		17C6E00325B587DA00C304E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C6E00125B587DA00C304E4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17A52F5625B5C760004450C3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		17A52F5925B5CB30004450C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		17A52F5D25B5CCDD004450C3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		17A52F6025B6CEDE004450C3 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		17C6DFF325B587D700C304E4 /* CombineNetworkingUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineNetworkingUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C6DFF625B587D700C304E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C6DFF825B587D700C304E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		17C6DFFA25B587D700C304E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		17C6DFFA25B587D700C304E4 /* UsersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableView.swift; sourceTree = "<group>"; };
 		17C6DFFD25B587D700C304E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17C6DFFF25B587DA00C304E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17C6E00225B587DA00C304E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +45,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17A52F5325B5C71F004450C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17A52F5625B5C760004450C3 /* User.swift */,
+				17A52F5D25B5CCDD004450C3 /* Country.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17A52F5425B5C726004450C3 /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				17A52F5925B5CB30004450C3 /* NetworkManager.swift */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		17A52F5525B5C73D004450C3 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17C6DFFA25B587D700C304E4 /* UsersTableView.swift */,
+				17A52F6025B6CEDE004450C3 /* CountriesViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		17C6DFEA25B587D700C304E4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +90,11 @@
 		17C6DFF525B587D700C304E4 /* CombineNetworkingUsers */ = {
 			isa = PBXGroup;
 			children = (
+				17A52F5425B5C726004450C3 /* Network Manager */,
+				17A52F5325B5C71F004450C3 /* Model */,
+				17A52F5525B5C73D004450C3 /* View Controller */,
 				17C6DFF625B587D700C304E4 /* AppDelegate.swift */,
 				17C6DFF825B587D700C304E4 /* SceneDelegate.swift */,
-				17C6DFFA25B587D700C304E4 /* ViewController.swift */,
 				17C6DFFC25B587D700C304E4 /* Main.storyboard */,
 				17C6DFFF25B587DA00C304E4 /* Assets.xcassets */,
 				17C6E00125B587DA00C304E4 /* LaunchScreen.storyboard */,
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C6DFFB25B587D700C304E4 /* ViewController.swift in Sources */,
+				17A52F5725B5C760004450C3 /* User.swift in Sources */,
+				17A52F6125B6CEDE004450C3 /* CountriesViewController.swift in Sources */,
+				17C6DFFB25B587D700C304E4 /* UsersTableView.swift in Sources */,
+				17A52F5A25B5CB30004450C3 /* NetworkManager.swift in Sources */,
 				17C6DFF725B587D700C304E4 /* AppDelegate.swift in Sources */,
+				17A52F5E25B5CCDD004450C3 /* Country.swift in Sources */,
 				17C6DFF925B587D700C304E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
