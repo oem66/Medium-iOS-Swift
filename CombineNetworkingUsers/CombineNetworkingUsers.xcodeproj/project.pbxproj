@@ -11,6 +11,7 @@
 		17A52F5A25B5CB30004450C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F5925B5CB30004450C3 /* NetworkManager.swift */; };
 		17A52F5E25B5CCDD004450C3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F5D25B5CCDD004450C3 /* Country.swift */; };
 		17A52F6125B6CEDE004450C3 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F6025B6CEDE004450C3 /* CountriesViewController.swift */; };
+		17A52F6525B6F8B1004450C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A52F6425B6F8B1004450C3 /* SettingsViewController.swift */; };
 		17C6DFF725B587D700C304E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6DFF625B587D700C304E4 /* AppDelegate.swift */; };
 		17C6DFF925B587D700C304E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6DFF825B587D700C304E4 /* SceneDelegate.swift */; };
 		17C6DFFB25B587D700C304E4 /* UsersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6DFFA25B587D700C304E4 /* UsersTableView.swift */; };
@@ -24,6 +25,7 @@
 		17A52F5925B5CB30004450C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		17A52F5D25B5CCDD004450C3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		17A52F6025B6CEDE004450C3 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		17A52F6425B6F8B1004450C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		17C6DFF325B587D700C304E4 /* CombineNetworkingUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineNetworkingUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C6DFF625B587D700C304E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C6DFF825B587D700C304E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				17C6DFFA25B587D700C304E4 /* UsersTableView.swift */,
 				17A52F6025B6CEDE004450C3 /* CountriesViewController.swift */,
+				17A52F6425B6F8B1004450C3 /* SettingsViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				17C6DFF725B587D700C304E4 /* AppDelegate.swift in Sources */,
 				17A52F5E25B5CCDD004450C3 /* Country.swift in Sources */,
 				17C6DFF925B587D700C304E4 /* SceneDelegate.swift in Sources */,
+				17A52F6525B6F8B1004450C3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -311,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

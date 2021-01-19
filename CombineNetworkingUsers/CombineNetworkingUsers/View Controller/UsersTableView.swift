@@ -27,6 +27,7 @@ class UsersTableViewController: UITableViewController {
         navigationItem.title = "Users"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Countries", style: .plain, target: self, action: #selector(countriesButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(settingsTapped))
         tableView.tableFooterView = UIView()
     }
     
@@ -40,6 +41,12 @@ class UsersTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let countriesVC = storyboard.instantiateViewController(withIdentifier: "CountriesViewController")
         self.navigationController?.pushViewController(countriesVC, animated: true)
+    }
+    
+    @objc func settingsTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
+        self.navigationController?.pushViewController(settingsVC, animated: true)
     }
 
 }
