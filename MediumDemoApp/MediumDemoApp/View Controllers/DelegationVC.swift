@@ -64,6 +64,10 @@ class BaseDelegationVC: ViewController {
 }
 
 extension BaseDelegationVC: ModalViewControllerDelegate {
+    func changeTextFromDelegate(_ viewController: DelegationModalVC, didUpdateText text: String) {
+        print("Nothing")
+    }
+    
     func modalViewController(_ viewController: DelegationModalVC, didUpdateText text: String) {
         textLabel.text = text
     }

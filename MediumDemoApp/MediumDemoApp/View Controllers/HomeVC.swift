@@ -81,6 +81,18 @@ class HomeVC: UIViewController {
         return button
     }()
     
+    let optionalsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Optionals", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10.0
+        
+        return button
+    }()
+    
     var tableViewContainer = UIView()
     
     override func viewDidLoad() {
@@ -122,6 +134,10 @@ class HomeVC: UIViewController {
     
     @objc func delegationButtonTapped() {
         navigationController?.pushViewController(BaseDelegationVC(), animated: true)
+    }
+    
+    @objc func optionalsButtonTapped() {
+        navigationController?.pushViewController(OptionalsDemoVC(), animated: true)
     }
 }
 
@@ -182,11 +198,20 @@ extension HomeVC: ASAuthorizationControllerDelegate {
             delegationButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
+        view.addSubview(optionalsButton)
+        NSLayoutConstraint.activate([
+            optionalsButton.topAnchor.constraint(equalTo: delegationButton.bottomAnchor, constant: 30),
+            optionalsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            optionalsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            optionalsButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
         tableViewButton.addTarget(self,  action: #selector(tableViewButtonTapped), for: .touchUpInside)
         countriesButton.addTarget(self, action: #selector(countriesButtonTapped), for: .touchUpInside)
         applePayRoute.addTarget(self, action: #selector(applePayButtonTapped), for: .touchUpInside)
         secureButton.addTarget(self, action: #selector(secureButtonTapped), for: .touchUpInside)
         delegationButton.addTarget(self, action: #selector(delegationButtonTapped), for: .touchUpInside)
+        optionalsButton.addTarget(self, action: #selector(optionalsButtonTapped), for: .touchUpInside)
     }
     
     private func enableNotifications() {

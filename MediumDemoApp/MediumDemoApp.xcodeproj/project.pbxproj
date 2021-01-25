@@ -11,6 +11,8 @@
 		170EB26B2553F8070055E6C2 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170EB26A2553F8070055E6C2 /* KeychainItemAccessibility.swift */; };
 		170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170EB26D2553F82E0055E6C2 /* KeychainWrapper.swift */; };
 		1710B5012484D8690027DC5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1710B5002484D8690027DC5F /* GoogleService-Info.plist */; };
+		1728387C25BF02A100A90E8C /* OptionalsDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */; };
+		1728388025BF039000A90E8C /* AlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728387F25BF039000A90E8C /* AlertProtocol.swift */; };
 		174C033B244ECF2600FDD664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C033A244ECF2600FDD664 /* AppDelegate.swift */; };
 		174C033D244ECF2600FDD664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C033C244ECF2600FDD664 /* SceneDelegate.swift */; };
 		174C033F244ECF2600FDD664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C033E244ECF2600FDD664 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 		170EB26D2553F82E0055E6C2 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		1710B4FF2484D7DE0027DC5F /* MediumDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MediumDemoApp.entitlements; sourceTree = "<group>"; };
 		1710B5002484D8690027DC5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalsDemoVC.swift; sourceTree = "<group>"; };
+		1728387F25BF039000A90E8C /* AlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProtocol.swift; sourceTree = "<group>"; };
 		174C0337244ECF2600FDD664 /* MediumDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediumDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174C033A244ECF2600FDD664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		174C033C244ECF2600FDD664 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1728387E25BF02CA00A90E8C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1728387F25BF039000A90E8C /* AlertProtocol.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		174C032E244ECF2600FDD664 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +128,7 @@
 		174C0339244ECF2600FDD664 /* MediumDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				1728387E25BF02CA00A90E8C /* Helpers */,
 				170EB26A2553F8070055E6C2 /* KeychainItemAccessibility.swift */,
 				170EB26D2553F82E0055E6C2 /* KeychainWrapper.swift */,
 				17723C3C2542D683005AC55F /* Constants */,
@@ -157,6 +170,7 @@
 				170EB2672553E7450055E6C2 /* SecureVC.swift */,
 				179EFDE22587652E00959261 /* DelegationVC.swift */,
 				179EFDE525876B5100959261 /* DelegationModalVC.swift */,
+				1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -343,6 +357,7 @@
 				174C033F244ECF2600FDD664 /* ViewController.swift in Sources */,
 				170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */,
 				17678F012475342E00242565 /* HomeVC.swift in Sources */,
+				1728387C25BF02A100A90E8C /* OptionalsDemoVC.swift in Sources */,
 				17BDB16F254C1B5A00651816 /* ApplePayVC.swift in Sources */,
 				170EB26B2553F8070055E6C2 /* KeychainItemAccessibility.swift in Sources */,
 				170EB2682553E7450055E6C2 /* SecureVC.swift in Sources */,
@@ -361,6 +376,7 @@
 				174C033B244ECF2600FDD664 /* AppDelegate.swift in Sources */,
 				179EFDE625876B5200959261 /* DelegationModalVC.swift in Sources */,
 				174C0353244ED2B900FDD664 /* NewsFeed.swift in Sources */,
+				1728388025BF039000A90E8C /* AlertProtocol.swift in Sources */,
 				17678F032475378A00242565 /* DemoTableViewVC.swift in Sources */,
 				174C033D244ECF2600FDD664 /* SceneDelegate.swift in Sources */,
 			);
