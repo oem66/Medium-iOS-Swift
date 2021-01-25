@@ -64,9 +64,10 @@ class OptionalsDemoVC: UIViewController {
         audi.owner = john
         
 //        var testCar = registerCar(car: vwGolf)
-        var audiCar = registerSuccessCar(car: audi)
+//        var audiCar = registerSuccessCar(car: audi)
+        var audiCar = earlyExitRegistration(car: audi)
         
-        print(audiCar)
+        print("Car \(audiCar.brand)")
     }
     
     private func registerCar(car: Car?) -> Car {
@@ -91,6 +92,14 @@ class OptionalsDemoVC: UIViewController {
             showCustomAlertFirst(title: "Failed to register", message: "Car couldn't bee registered!", actionTitle: "OK")
             return Car()
         }
+    }
+    
+    private func earlyExitRegistration(car: Car) -> Car {
+        guard let carOwnerAge = car.owner?.age, carOwnerAge > 18 else {
+            showCustomAlertFirst(title: "Registration Failed", message: "Car is not registered", actionTitle: "OK")
+            return Car()
+        }
+        return car
     }
 }
 
