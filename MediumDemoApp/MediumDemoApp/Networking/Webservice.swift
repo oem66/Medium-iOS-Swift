@@ -7,8 +7,14 @@
 //
 
 import Foundation
+import UIKit
+import Combine
 
 class Webservice {
+    
+    private let oneDayAgoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
+    private let oneWeekAgoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
+    private let oneMonthAgoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"
     
     func getAllCountries(completion: @escaping (Result<[Country],Error>) -> ()) {
         guard let url = URL(string: "\(APIEndpoints().GetAllCountries)") else {
@@ -38,5 +44,32 @@ class Webservice {
         let isGoodOption = true
         
         completion(message, isGoodOption)
+    }
+    
+    var earthquakesDayPublisher: AnyPublisher<Earthquake, Error> {
+        let url = URL(string: oneDayAgoURL)!
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: Earthquake.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
+    
+    var earthquakeWeekPublisher: AnyPublisher<Earthquake, Error> {
+        let url = URL(string: oneWeekAgoURL)!
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: Earthquake.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
+    
+    var earthquakeMonthPublisher: AnyPublisher<Earthquake,Error> {
+        let url = URL(string: oneMonthAgoURL)!
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: Earthquake.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
     }
 }

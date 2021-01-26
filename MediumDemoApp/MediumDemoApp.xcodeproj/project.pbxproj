@@ -32,6 +32,10 @@
 		179EFDE92587712F00959261 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EFDE82587712F00959261 /* TextFieldExtension.swift */; };
 		17B99EA225483CA1006834FB /* CountryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B99EA125483CA1006834FB /* CountryDetails.swift */; };
 		17BDB16F254C1B5A00651816 /* ApplePayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BDB16E254C1B5A00651816 /* ApplePayVC.swift */; };
+		17C2B23825C013670044BF91 /* EarthquakesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B23725C013670044BF91 /* EarthquakesVC.swift */; };
+		17C2B23C25C0375E0044BF91 /* Earthquake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B23B25C0375E0044BF91 /* Earthquake.swift */; };
+		17C2B24025C041150044BF91 /* EarthquakeDayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B23F25C041150044BF91 /* EarthquakeDayVC.swift */; };
+		17C2B24425C047C90044BF91 /* EarthquakesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B24325C047C90044BF91 /* EarthquakesCell.swift */; };
 		17D8609A2546D09600C59DEC /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D860992546D09600C59DEC /* CountryCell.swift */; };
 		17D8609D2546F64400C59DEC /* CountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8609C2546F64400C59DEC /* CountryVC.swift */; };
 		17DFEF3B2454AB2A00EA762B /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFEF3A2454AB2A00EA762B /* Source.swift */; };
@@ -70,6 +74,10 @@
 		179EFDE82587712F00959261 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		17B99EA125483CA1006834FB /* CountryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetails.swift; sourceTree = "<group>"; };
 		17BDB16E254C1B5A00651816 /* ApplePayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayVC.swift; sourceTree = "<group>"; };
+		17C2B23725C013670044BF91 /* EarthquakesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesVC.swift; sourceTree = "<group>"; };
+		17C2B23B25C0375E0044BF91 /* Earthquake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earthquake.swift; sourceTree = "<group>"; };
+		17C2B23F25C041150044BF91 /* EarthquakeDayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDayVC.swift; sourceTree = "<group>"; };
+		17C2B24325C047C90044BF91 /* EarthquakesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesCell.swift; sourceTree = "<group>"; };
 		17D860992546D09600C59DEC /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		17D8609C2546F64400C59DEC /* CountryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryVC.swift; sourceTree = "<group>"; };
 		17DFEF3A2454AB2A00EA762B /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
@@ -151,6 +159,7 @@
 		174C0351244ED2AE00FDD664 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17C2B23A25C0374A0044BF91 /* Earthquake */,
 				17723C332542D425005AC55F /* Countries */,
 				17723C322542D417005AC55F /* News */,
 				17E4F3CE2471581B00B144D8 /* Finance */,
@@ -171,6 +180,7 @@
 				179EFDE22587652E00959261 /* DelegationVC.swift */,
 				179EFDE525876B5100959261 /* DelegationModalVC.swift */,
 				1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */,
+				17C2B23E25C040CD0044BF91 /* Earthquake */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -180,6 +190,7 @@
 			children = (
 				17678F0424753E7800242565 /* DemoCell.swift */,
 				17D860992546D09600C59DEC /* CountryCell.swift */,
+				17C2B24325C047C90044BF91 /* EarthquakesCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +228,23 @@
 				179EFDE82587712F00959261 /* TextFieldExtension.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		17C2B23A25C0374A0044BF91 /* Earthquake */ = {
+			isa = PBXGroup;
+			children = (
+				17C2B23B25C0375E0044BF91 /* Earthquake.swift */,
+			);
+			path = Earthquake;
+			sourceTree = "<group>";
+		};
+		17C2B23E25C040CD0044BF91 /* Earthquake */ = {
+			isa = PBXGroup;
+			children = (
+				17C2B23725C013670044BF91 /* EarthquakesVC.swift */,
+				17C2B23F25C041150044BF91 /* EarthquakeDayVC.swift */,
+			);
+			path = Earthquake;
 			sourceTree = "<group>";
 		};
 		17E4F3CE2471581B00B144D8 /* Finance */ = {
@@ -353,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D8609A2546D09600C59DEC /* CountryCell.swift in Sources */,
+				17C2B23C25C0375E0044BF91 /* Earthquake.swift in Sources */,
 				17723C3A2542D527005AC55F /* Country.swift in Sources */,
 				174C033F244ECF2600FDD664 /* ViewController.swift in Sources */,
 				170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */,
@@ -370,9 +399,12 @@
 				17DFEF3B2454AB2A00EA762B /* Source.swift in Sources */,
 				17B99EA225483CA1006834FB /* CountryDetails.swift in Sources */,
 				17E4F3D02471584900B144D8 /* CurrencyRate.swift in Sources */,
+				17C2B24425C047C90044BF91 /* EarthquakesCell.swift in Sources */,
 				179EFDE32587652E00959261 /* DelegationVC.swift in Sources */,
 				179EFDE92587712F00959261 /* TextFieldExtension.swift in Sources */,
 				17723C362542D4BB005AC55F /* Webservice.swift in Sources */,
+				17C2B24025C041150044BF91 /* EarthquakeDayVC.swift in Sources */,
+				17C2B23825C013670044BF91 /* EarthquakesVC.swift in Sources */,
 				174C033B244ECF2600FDD664 /* AppDelegate.swift in Sources */,
 				179EFDE625876B5200959261 /* DelegationModalVC.swift in Sources */,
 				174C0353244ED2B900FDD664 /* NewsFeed.swift in Sources */,

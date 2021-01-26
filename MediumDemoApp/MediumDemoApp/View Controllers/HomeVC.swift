@@ -93,6 +93,18 @@ class HomeVC: UIViewController {
         return button
     }()
     
+    let earthquakesButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Earthquakes", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10.0
+        
+        return button
+    }()
+    
     var tableViewContainer = UIView()
     
     override func viewDidLoad() {
@@ -138,6 +150,10 @@ class HomeVC: UIViewController {
     
     @objc func optionalsButtonTapped() {
         navigationController?.pushViewController(OptionalsDemoVC(), animated: true)
+    }
+    
+    @objc func earthquakesButtonTapped() {
+        navigationController?.pushViewController(EarthquakesVC(), animated: true)
     }
 }
 
@@ -206,12 +222,21 @@ extension HomeVC: ASAuthorizationControllerDelegate {
             optionalsButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
+        view.addSubview(earthquakesButton)
+        NSLayoutConstraint.activate([
+            earthquakesButton.topAnchor.constraint(equalTo: optionalsButton.bottomAnchor, constant: 30),
+            earthquakesButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            earthquakesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            earthquakesButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
         tableViewButton.addTarget(self,  action: #selector(tableViewButtonTapped), for: .touchUpInside)
         countriesButton.addTarget(self, action: #selector(countriesButtonTapped), for: .touchUpInside)
         applePayRoute.addTarget(self, action: #selector(applePayButtonTapped), for: .touchUpInside)
         secureButton.addTarget(self, action: #selector(secureButtonTapped), for: .touchUpInside)
         delegationButton.addTarget(self, action: #selector(delegationButtonTapped), for: .touchUpInside)
         optionalsButton.addTarget(self, action: #selector(optionalsButtonTapped), for: .touchUpInside)
+        earthquakesButton.addTarget(self, action: #selector(earthquakesButtonTapped), for: .touchUpInside)
     }
     
     private func enableNotifications() {
