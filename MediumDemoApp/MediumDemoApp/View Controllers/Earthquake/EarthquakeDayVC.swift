@@ -41,6 +41,12 @@ class EarthquakeDayVC: UITableViewController {
             self.earthquakesDay = earthquakes
         })
     }
+    
+    private func pushViewController(earthquakeDetails: EarthquakeDetails) {
+        let earthquakeDetailsVC = EarthquakeDetailsVC()
+        earthquakeDetailsVC.earthquakeDetails = earthquakeDetails
+        navigationController?.pushViewController(earthquakeDetailsVC, animated: true)
+    }
 }
 
 extension EarthquakeDayVC {
@@ -56,12 +62,14 @@ extension EarthquakeDayVC {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "earthquakeCell") as? EarthquakesCell else { return UITableViewCell() }
         if let title = earthquakesDay.features?[indexPath.item].properties?.title,
            let magnitude = earthquakesDay.features?[indexPath.item].properties?.mag {
-            cell.configureCell(title: title, magnitude: Int(magnitude))
+            cell.configureCell(title: title, magnitude: Double(magnitude))
         } else { cell.configureCell(title: "None", magnitude: 0) }
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        pushViewController(earthquakeDetails: earthquakesDay.features![indexPath.row])
     }
 }

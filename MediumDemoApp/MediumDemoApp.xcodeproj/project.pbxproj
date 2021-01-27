@@ -41,6 +41,7 @@
 		17DFEF3B2454AB2A00EA762B /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFEF3A2454AB2A00EA762B /* Source.swift */; };
 		17E4F3D02471584900B144D8 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4F3CF2471584900B144D8 /* CurrencyRate.swift */; };
 		17E4F3D22471587500B144D8 /* ConversionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4F3D12471587500B144D8 /* ConversionRate.swift */; };
+		17FD9ACA25C165040080A62A /* EarthquakeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD9AC925C165040080A62A /* EarthquakeDetails.swift */; };
 		24A54E9E8F9EAAF8366ABD6E /* Pods_MediumDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B1B612A0E78566717A9B4 /* Pods_MediumDemoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		17DFEF3A2454AB2A00EA762B /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		17E4F3CF2471584900B144D8 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		17E4F3D12471587500B144D8 /* ConversionRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRate.swift; sourceTree = "<group>"; };
+		17FD9AC925C165040080A62A /* EarthquakeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDetails.swift; sourceTree = "<group>"; };
 		33EDD65E3B73F1E62E12A8BA /* Pods-MediumDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MediumDemoApp/Pods-MediumDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E6BB290C03D6A9B5DAAFA9F5 /* Pods-MediumDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MediumDemoApp/Pods-MediumDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +245,7 @@
 			children = (
 				17C2B23725C013670044BF91 /* EarthquakesVC.swift */,
 				17C2B23F25C041150044BF91 /* EarthquakeDayVC.swift */,
+				17FD9AC925C165040080A62A /* EarthquakeDetails.swift */,
 			);
 			path = Earthquake;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				17D8609A2546D09600C59DEC /* CountryCell.swift in Sources */,
 				17C2B23C25C0375E0044BF91 /* Earthquake.swift in Sources */,
 				17723C3A2542D527005AC55F /* Country.swift in Sources */,
+				17FD9ACA25C165040080A62A /* EarthquakeDetails.swift in Sources */,
 				174C033F244ECF2600FDD664 /* ViewController.swift in Sources */,
 				170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */,
 				17678F012475342E00242565 /* HomeVC.swift in Sources */,

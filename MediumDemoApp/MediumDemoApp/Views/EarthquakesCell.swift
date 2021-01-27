@@ -29,11 +29,11 @@ class EarthquakesCell: UITableViewCell {
         cellEarthquakeTitle.translatesAutoresizingMaskIntoConstraints = false
         cellEarthquakeMagnitude.translatesAutoresizingMaskIntoConstraints = false
         
-        self.backgroundColor = UIColor.systemBlue
+        self.backgroundColor = UIColor.tertiarySystemBackground
         
         cellEarthquakeTitle.adjustsFontSizeToFitWidth = true
         cellEarthquakeTitle.font = UIFont.boldSystemFont(ofSize: 16)
-        cellEarthquakeTitle.textColor = .green
+        cellEarthquakeTitle.textColor = .black
         cellEarthquakeTitle.numberOfLines = 0
         
         cellEarthquakeMagnitude.adjustsFontSizeToFitWidth = true
@@ -52,7 +52,7 @@ class EarthquakesCell: UITableViewCell {
         ])
     }
     
-    func configureCell(title: String, magnitude: Int) {
+    func configureCell(title: String, magnitude: Double) {
         self.cellEarthquakeTitle.text = title
         self.cellEarthquakeMagnitude.text = "\(magnitude)"
     }
