@@ -37,13 +37,37 @@ class Webservice {
         }.resume()
     }
     
-    static func fetchFakeData(completion: @escaping (String, Bool) -> ()) {
-        print("This print is from completion")
+    func fetchFakeData(isElectric: Bool, brand: String, model: String ,completion: @escaping (String, Bool) -> ()) {
+//        print("This print is from completion")
+//
+//        let message = "Peugeot 3008"
+//        let isGoodOption = true
+//
+//        completion(message, isGoodOption)
+        var message = checkCarQuality(isElectric, brand, model)
+        var isGoodOption = false
         
-        let message = "Peugeot 3008"
-        let isGoodOption = true
+        switch isElectric {
+        case true:
+            isGoodOption = true
+            completion(message, isGoodOption)
+        case false:
+            isGoodOption = false
+            completion(message, isGoodOption)
+        default:
+            print("DEFAULT FROM CLOSURE")
+        }
+    }
+    
+    func checkCarQuality(_ isElectric: Bool, _ brand: String, _ model: String) -> String {
+        var message = ""
+        if isElectric {
+            message = "Electric car \(brand) \(model) is great option to buy. SUCCESS TRUE"
+        } else {
+            message = "No electric car \(brand) \(model) is very bad option to buy. FAIL FALSE"
+        }
         
-        completion(message, isGoodOption)
+        return message
     }
     
     var earthquakesDayPublisher: AnyPublisher<Earthquake, Error> {

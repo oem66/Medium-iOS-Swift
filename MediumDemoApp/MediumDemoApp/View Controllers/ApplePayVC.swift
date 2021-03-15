@@ -50,7 +50,7 @@ class ApplePayVC: UIViewController {
         let total = PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(string: "10.99"), type: .pending)
         request.paymentSummaryItems = [fare, tax, total]
         
-//        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "iPhone 12 Pro 128 GB", amount: 999),PKPaymentSummaryItem(label: "iPhone 11 Pro 64 GB", amount: 799), PKPaymentSummaryItem(label: "iPhone X 64 GB", amount: 599), PKPaymentSummaryItem(label: "Apple MacBook Pro 13' 512 GB", amount: 2999),]
+        //        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "iPhone 12 Pro 128 GB", amount: 999),PKPaymentSummaryItem(label: "iPhone 11 Pro 64 GB", amount: 799), PKPaymentSummaryItem(label: "iPhone X 64 GB", amount: 599), PKPaymentSummaryItem(label: "Apple MacBook Pro 13' 512 GB", amount: 2999),]
         
         return request
     }()
@@ -100,9 +100,11 @@ class ApplePayVC: UIViewController {
     }
     
     @objc func completionButtonTapped() {
-        Webservice.fetchFakeData { (message, isGoodOptionToBuy) in
+        Webservice().fetchFakeData(isElectric: true, brand: "Volkswagen", model: "ID.3") { (message, isGoodOptionToBuy) in
             if isGoodOptionToBuy {
-                print("Car -> \(message) is good option to buy!")
+                print(message)
+            } else {
+                print(message)
             }
         }
     }
