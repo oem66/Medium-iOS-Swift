@@ -26,6 +26,14 @@ class EarthquakeDayVC: UITableViewController {
         print(earthquakesDay)
     }
     
+//    private func setupUI() {
+//        let editImage = UIImage(systemName: "lock")?.withTintColor(Constants().defaultColor, renderingMode: .alwaysOriginal)
+//        let rightBarButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: self, action: #selector(lockTapped))
+//        rightBarButton.image = editImage
+//
+//        self.navigationItem.rightBarButtonItem = rightBarButton
+//    }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
