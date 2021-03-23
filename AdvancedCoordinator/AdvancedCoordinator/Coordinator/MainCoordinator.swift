@@ -37,6 +37,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
     
     func childDidFinish(_ child: Coordinator?) {
+        print("====================| CHILD DID FINISH |====================")
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
                 childCoordinators.remove(at: index)
@@ -58,3 +59,5 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         }
     }
 }
+
+// Domaca zadaca: MainCoordinator -> SettingsCoordinator -> ProfileCoordinator za sljedeci cas.
