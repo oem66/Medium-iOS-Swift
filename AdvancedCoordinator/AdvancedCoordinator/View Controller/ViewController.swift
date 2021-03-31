@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
-    @IBOutlet weak var product: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +22,17 @@ class ViewController: UIViewController, Storyboarded {
     
     @IBAction func createAccountTapped(_ sender: Any) {
         coordinator?.createAccount()
+    }
+    
+    
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
+    @IBAction func authenticateTapped(_ sender: Any) {
+        var username = usernameTxt.text ?? "none"
+        var password = passwordTxt.text ?? "none"
+        
+        coordinator?.authenticate(username, password)
     }
     
 }

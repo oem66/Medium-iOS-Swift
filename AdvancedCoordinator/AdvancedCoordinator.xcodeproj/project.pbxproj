@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170A841F2614F35100DB5CCC /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A841E2614F35100DB5CCC /* AuthenticateViewController.swift */; };
+		170A84222614F4C600DB5CCC /* AuthenticateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A84212614F4C600DB5CCC /* AuthenticateCoordinator.swift */; };
 		17B448DD25FF573400CCF7DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B448DC25FF573400CCF7DD /* AppDelegate.swift */; };
 		17B448DF25FF573400CCF7DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B448DE25FF573400CCF7DD /* SceneDelegate.swift */; };
 		17B448E125FF573400CCF7DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B448E025FF573400CCF7DD /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170A841E2614F35100DB5CCC /* AuthenticateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
+		170A84212614F4C600DB5CCC /* AuthenticateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateCoordinator.swift; sourceTree = "<group>"; };
 		17B448D925FF573400CCF7DD /* AdvancedCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B448DC25FF573400CCF7DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17B448DE25FF573400CCF7DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				17B448FB25FF5B2000CCF7DD /* BuyViewController.swift */,
 				17B448FE25FF5B3800CCF7DD /* CreateAccountViewController.swift */,
 				17B448E025FF573400CCF7DD /* ViewController.swift */,
+				170A841E2614F35100DB5CCC /* AuthenticateViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				17B448F725FF594F00CCF7DD /* MainCoordinator.swift */,
 				17B4490425FF635F00CCF7DD /* BuyCoordinator.swift */,
+				170A84212614F4C600DB5CCC /* AuthenticateCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 				17B448F225FF576B00CCF7DD /* Coordinator.swift in Sources */,
 				17B448F825FF594F00CCF7DD /* MainCoordinator.swift in Sources */,
 				17B448E125FF573400CCF7DD /* ViewController.swift in Sources */,
+				170A841F2614F35100DB5CCC /* AuthenticateViewController.swift in Sources */,
 				17B448F525FF581E00CCF7DD /* Storyboarded.swift in Sources */,
+				170A84222614F4C600DB5CCC /* AuthenticateCoordinator.swift in Sources */,
 				17B448FF25FF5B3800CCF7DD /* CreateAccountViewController.swift in Sources */,
 				17B448DD25FF573400CCF7DD /* AppDelegate.swift in Sources */,
 				17B448FC25FF5B2000CCF7DD /* BuyViewController.swift in Sources */,

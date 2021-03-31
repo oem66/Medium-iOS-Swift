@@ -36,6 +36,36 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    private func authenticateResult(username: String, password: String, completion: @escaping (String, Bool) ->()) {
+        var message = ""
+        var isAuthenticated = false
+        if username == "stuxnet" && password == "secure100" {
+            message = "Access granted!"
+            isAuthenticated = true
+            completion(message, isAuthenticated)
+        } else {
+            message = "Access denied!"
+            isAuthenticated = false
+            completion(message, isAuthenticated)
+        }
+        
+    }
+    
+    func authenticate(_ username: String, _ password: String) {
+        let child = AuthenticateCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        
+        authenticateResult(username: username, password: password) { (message, isAuthenticated) in
+            if isAuthenticated {
+                print("Auth message: \(message)")
+                child.start()
+            } else {
+                print("Username: \(username) is not authenticated! Message: \(message)")
+            }
+        }
+    }
+    
     func childDidFinish(_ child: Coordinator?) {
         print("====================| CHILD DID FINISH |====================")
         for (index, coordinator) in childCoordinators.enumerated() {
