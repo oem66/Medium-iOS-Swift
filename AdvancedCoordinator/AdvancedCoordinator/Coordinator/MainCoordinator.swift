@@ -90,4 +90,4 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
 }
 
-// Domaca zadaca: MainCoordinator -> SettingsCoordinator -> ProfileCoordinator za sljedeci cas.
+// Use case: MainCoordinator -> SettingsCoordinator -> ProfileCoordinator.

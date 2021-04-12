@@ -13,6 +13,7 @@
 		1710B5012484D8690027DC5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1710B5002484D8690027DC5F /* GoogleService-Info.plist */; };
 		1728387C25BF02A100A90E8C /* OptionalsDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */; };
 		1728388025BF039000A90E8C /* AlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728387F25BF039000A90E8C /* AlertProtocol.swift */; };
+		174198F9262426AF006D1FB6 /* DelegateSecVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174198F8262426AF006D1FB6 /* DelegateSecVC.swift */; };
 		174C033B244ECF2600FDD664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C033A244ECF2600FDD664 /* AppDelegate.swift */; };
 		174C033D244ECF2600FDD664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C033C244ECF2600FDD664 /* SceneDelegate.swift */; };
 		174C033F244ECF2600FDD664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C033E244ECF2600FDD664 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		17723C362542D4BB005AC55F /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17723C352542D4BB005AC55F /* Webservice.swift */; };
 		17723C3A2542D527005AC55F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17723C392542D527005AC55F /* Country.swift */; };
 		17723C3E2542D68E005AC55F /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17723C3D2542D68E005AC55F /* APIEndpoints.swift */; };
+		177865ED2624758200087599 /* ModalDelegationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177865EC2624758200087599 /* ModalDelegationVC.swift */; };
 		179EFDE32587652E00959261 /* DelegationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EFDE22587652E00959261 /* DelegationVC.swift */; };
 		179EFDE625876B5200959261 /* DelegationModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EFDE525876B5100959261 /* DelegationModalVC.swift */; };
 		179EFDE92587712F00959261 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EFDE82587712F00959261 /* TextFieldExtension.swift */; };
@@ -54,6 +56,7 @@
 		1710B5002484D8690027DC5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalsDemoVC.swift; sourceTree = "<group>"; };
 		1728387F25BF039000A90E8C /* AlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProtocol.swift; sourceTree = "<group>"; };
+		174198F8262426AF006D1FB6 /* DelegateSecVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateSecVC.swift; sourceTree = "<group>"; };
 		174C0337244ECF2600FDD664 /* MediumDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediumDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174C033A244ECF2600FDD664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		174C033C244ECF2600FDD664 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		17723C352542D4BB005AC55F /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		17723C392542D527005AC55F /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		17723C3D2542D68E005AC55F /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		177865EC2624758200087599 /* ModalDelegationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDelegationVC.swift; sourceTree = "<group>"; };
 		179EFDE22587652E00959261 /* DelegationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationVC.swift; sourceTree = "<group>"; };
 		179EFDE525876B5100959261 /* DelegationModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationModalVC.swift; sourceTree = "<group>"; };
 		179EFDE82587712F00959261 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -115,6 +119,15 @@
 				1728387F25BF039000A90E8C /* AlertProtocol.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		174198FB26242B5A006D1FB6 /* Delegate 2 */ = {
+			isa = PBXGroup;
+			children = (
+				174198F8262426AF006D1FB6 /* DelegateSecVC.swift */,
+				177865EC2624758200087599 /* ModalDelegationVC.swift */,
+			);
+			path = "Delegate 2";
 			sourceTree = "<group>";
 		};
 		174C032E244ECF2600FDD664 = {
@@ -172,6 +185,7 @@
 		17678EFE247533F300242565 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				174198FB26242B5A006D1FB6 /* Delegate 2 */,
 				174C033E244ECF2600FDD664 /* ViewController.swift */,
 				17678F002475342E00242565 /* HomeVC.swift */,
 				17678F022475378A00242565 /* DemoTableViewVC.swift */,
@@ -387,6 +401,7 @@
 				17C2B23C25C0375E0044BF91 /* Earthquake.swift in Sources */,
 				17723C3A2542D527005AC55F /* Country.swift in Sources */,
 				17FD9ACA25C165040080A62A /* EarthquakeDetails.swift in Sources */,
+				177865ED2624758200087599 /* ModalDelegationVC.swift in Sources */,
 				174C033F244ECF2600FDD664 /* ViewController.swift in Sources */,
 				170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */,
 				17678F012475342E00242565 /* HomeVC.swift in Sources */,
@@ -405,6 +420,7 @@
 				17E4F3D02471584900B144D8 /* CurrencyRate.swift in Sources */,
 				17C2B24425C047C90044BF91 /* EarthquakesCell.swift in Sources */,
 				179EFDE32587652E00959261 /* DelegationVC.swift in Sources */,
+				174198F9262426AF006D1FB6 /* DelegateSecVC.swift in Sources */,
 				179EFDE92587712F00959261 /* TextFieldExtension.swift in Sources */,
 				17723C362542D4BB005AC55F /* Webservice.swift in Sources */,
 				17C2B24025C041150044BF91 /* EarthquakeDayVC.swift in Sources */,
