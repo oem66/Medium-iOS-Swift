@@ -68,12 +68,16 @@ class ModalDelegationVC: UIViewController {
     }
     
     @objc func redbullRacingButtonTapped() {
-        selectionDelegate.didTapChoice(text: "RedBull Racing", color: .blue, image: "rbr")
+        let name = Notification.Name(rawValue: rbrNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
+//        selectionDelegate.didTapChoice(text: "RedBull Racing", color: .blue, image: "rbr")
         dismiss(animated: true, completion: nil)
     }
     
     @objc func mercedesAMGButtonTapped() {
-        selectionDelegate.didTapChoice(text: "Mercedes AMG F1", color: .cyan, image: "mercedesf1")
+        let name = Notification.Name(rawValue: mercNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
+//        selectionDelegate.didTapChoice(text: "Mercedes AMG F1", color: .cyan, image: "mercedesf1")
         dismiss(animated: true, completion: nil)
     }
 }

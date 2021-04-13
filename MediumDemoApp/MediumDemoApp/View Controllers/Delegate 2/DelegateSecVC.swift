@@ -8,6 +8,9 @@
 
 import UIKit
 
+let rbrNotificationKey = "co.omer.rbrSide"
+let mercNotificationKey = "co.omer.mercSide"
+
 class DelegateSecVC: ViewController {
     
     var textLabel: UILabel = {
@@ -34,9 +37,50 @@ class DelegateSecVC: ViewController {
         return button
     }()
     
+    let rbrF1 = Notification.Name(rawValue: rbrNotificationKey)
+    let mercF1 = Notification.Name(rawValue: mercNotificationKey)
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        createObservers()
+    }
+    
+    func createObservers() {
+        // RedBull Racing
+        NotificationCenter.default.addObserver(self, selector: #selector(DelegateSecVC.updateScreenImage(notification:)), name: rbrF1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DelegateSecVC.updateNameLabel(notification:)), name: rbrF1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DelegateSecVC.updateBackgroundImage(notification:)), name: rbrF1, object: nil)
+        
+        // Mercedes AMG F1
+        NotificationCenter.default.addObserver(self, selector: #selector(DelegateSecVC.updateScreenImage(notification:)), name: mercF1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DelegateSecVC.updateNameLabel(notification:)), name: mercF1, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DelegateSecVC.updateBackgroundImage(notification:)), name: mercF1, object: nil)
+    }
+    
+    @objc func updateScreenImage(notification: NSNotification) {
+        let isRbr = notification.name == rbrF1
+        let image = isRbr ? UIImage(named: "rbr")! : UIImage(named: "mercedesf1")!
+        teamImage.image = image
+        debugPrint("updateScreenImage invoked for key: \(notification.name)!")
+    }
+    
+    @objc func updateNameLabel(notification: NSNotification) {
+        let isRbr = notification.name == rbrF1
+        let teamName = isRbr ? "RedBull Racing" : "Mercedes AMG F1"
+        textLabel.text = teamName
+        debugPrint("updateNameLabel invoked for key: \(notification.name)!")
+    }
+    
+    @objc func updateBackgroundImage(notification: NSNotification) {
+        let isRbr = notification.name == rbrF1
+        let color = isRbr ? UIColor.blue : UIColor.cyan
+        view.backgroundColor = color
+        debugPrint("updateBackgroundImage invoked for key: \(notification.name)!")
     }
     
     private func setupUI() {
@@ -56,7 +100,7 @@ class DelegateSecVC: ViewController {
             
             teamImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             teamImage.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 10),
-            teamImage.widthAnchor.constraint(equalToConstant: 100),
+            teamImage.widthAnchor.constraint(equalToConstant: 200),
             teamImage.heightAnchor.constraint(equalToConstant: 100),
             
             delegationModalScreenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -70,25 +114,25 @@ class DelegateSecVC: ViewController {
     
     @objc func openModalDelegationScreen() {
         let vc = ModalDelegationVC()
-        vc.selectionDelegate = self
+//        vc.selectionDelegate = self
         navigationController?.present(vc, animated: true, completion: nil)
     }
 }
 
-extension DelegateSecVC: SideSelectionDelegate {
-    func didTapChoice(text: String?, color: UIColor?, image: String?) {
-        if let Text = text,
-           let Color = color,
-           let Image = image {
-            textLabel.text = Text
-            view.backgroundColor = Color
-            teamImage.image = UIImage(named: Image)
-        }
-    }
-    
-    func didTapChoice(text: String, color: UIColor, image: String) {
-        textLabel.text = "\(text)"
-        view.backgroundColor = color
-        teamImage.image = UIImage(named: image)
-    }
-}
+//extension DelegateSecVC: SideSelectionDelegate {
+//    func didTapChoice(text: String?, color: UIColor?, image: String?) {
+//        if let Text = text,
+//           let Color = color,
+//           let Image = image {
+//            textLabel.text = Text
+//            view.backgroundColor = Color
+//            teamImage.image = UIImage(named: Image)
+//        }
+//    }
+//
+//    func didTapChoice(text: String, color: UIColor, image: String) {
+//        textLabel.text = "\(text)"
+//        view.backgroundColor = color
+//        teamImage.image = UIImage(named: image)
+//    }
+//}
