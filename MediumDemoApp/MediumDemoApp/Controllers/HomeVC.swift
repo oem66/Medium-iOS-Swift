@@ -11,7 +11,9 @@ import SnapKit
 import UserNotifications
 import AuthenticationServices
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, Storyboarded {
+    
+    weak var coordinator: AppCoordinator?
     
     var countries = [Country]()
     

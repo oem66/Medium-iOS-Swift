@@ -50,6 +50,8 @@
 		17DFEF3B2454AB2A00EA762B /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFEF3A2454AB2A00EA762B /* Source.swift */; };
 		17E4F3D02471584900B144D8 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4F3CF2471584900B144D8 /* CurrencyRate.swift */; };
 		17E4F3D22471587500B144D8 /* ConversionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4F3D12471587500B144D8 /* ConversionRate.swift */; };
+		17FB2C53262A1E83009631CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB2C52262A1E83009631CA /* AppCoordinator.swift */; };
+		17FB2C57262A2145009631CA /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB2C56262A2145009631CA /* Storyboarded.swift */; };
 		17FD9ACA25C165040080A62A /* EarthquakeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD9AC925C165040080A62A /* EarthquakeDetails.swift */; };
 		24A54E9E8F9EAAF8366ABD6E /* Pods_MediumDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147B1B612A0E78566717A9B4 /* Pods_MediumDemoApp.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		17DFEF3A2454AB2A00EA762B /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		17E4F3CF2471584900B144D8 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		17E4F3D12471587500B144D8 /* ConversionRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRate.swift; sourceTree = "<group>"; };
+		17FB2C52262A1E83009631CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		17FB2C56262A2145009631CA /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		17FD9AC925C165040080A62A /* EarthquakeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDetails.swift; sourceTree = "<group>"; };
 		33EDD65E3B73F1E62E12A8BA /* Pods-MediumDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-MediumDemoApp/Pods-MediumDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E6BB290C03D6A9B5DAAFA9F5 /* Pods-MediumDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumDemoApp.release.xcconfig"; path = "Target Support Files/Pods-MediumDemoApp/Pods-MediumDemoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 		174C0339244ECF2600FDD664 /* MediumDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				17FB2C51262A1E6E009631CA /* Coordinators */,
 				179E3FE22629BB8400F65E2E /* View Models */,
 				179E3FDD2629BA1A00F65E2E /* Protocols */,
 				1728387E25BF02CA00A90E8C /* Helpers */,
@@ -288,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				179E3FDE2629BA2E00F65E2E /* BaseVC.swift */,
+				17FB2C56262A2145009631CA /* Storyboarded.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -324,6 +330,14 @@
 				17E4F3D12471587500B144D8 /* ConversionRate.swift */,
 			);
 			path = Finance;
+			sourceTree = "<group>";
+		};
+		17FB2C51262A1E6E009631CA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				17FB2C52262A1E83009631CA /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		F0D57DD2C7B5ED5EC2E3A767 /* Pods */ = {
@@ -456,10 +470,12 @@
 				17723C3A2542D527005AC55F /* Country.swift in Sources */,
 				176979CD2626F6C1009907D3 /* MemoryManagement.swift in Sources */,
 				176979CA2626F5DB009907D3 /* Memory.swift in Sources */,
+				17FB2C53262A1E83009631CA /* AppCoordinator.swift in Sources */,
 				17FD9ACA25C165040080A62A /* EarthquakeDetails.swift in Sources */,
 				179E3FE42629BBEB00F65E2E /* CountryService.swift in Sources */,
 				177865ED2624758200087599 /* ModalDelegationVC.swift in Sources */,
 				174C033F244ECF2600FDD664 /* ViewController.swift in Sources */,
+				17FB2C57262A2145009631CA /* Storyboarded.swift in Sources */,
 				170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */,
 				179E3FE72629BBFB00F65E2E /* EarthquakeService.swift in Sources */,
 				17678F012475342E00242565 /* HomeVC.swift in Sources */,
