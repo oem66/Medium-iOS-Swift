@@ -31,6 +31,11 @@
 		17723C3A2542D527005AC55F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17723C392542D527005AC55F /* Country.swift */; };
 		17723C3E2542D68E005AC55F /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17723C3D2542D68E005AC55F /* APIEndpoints.swift */; };
 		177865ED2624758200087599 /* ModalDelegationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177865EC2624758200087599 /* ModalDelegationVC.swift */; };
+		179E3FDF2629BA2E00F65E2E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E3FDE2629BA2E00F65E2E /* BaseVC.swift */; };
+		179E3FE42629BBEB00F65E2E /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E3FE32629BBEB00F65E2E /* CountryService.swift */; };
+		179E3FE72629BBFB00F65E2E /* EarthquakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E3FE62629BBFB00F65E2E /* EarthquakeService.swift */; };
+		179E3FEA2629BC0900F65E2E /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E3FE92629BC0900F65E2E /* WeatherService.swift */; };
+		179E3FED2629BC1400F65E2E /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E3FEC2629BC1400F65E2E /* NewsService.swift */; };
 		179EFDE32587652E00959261 /* DelegationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EFDE22587652E00959261 /* DelegationVC.swift */; };
 		179EFDE625876B5200959261 /* DelegationModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EFDE525876B5100959261 /* DelegationModalVC.swift */; };
 		179EFDE92587712F00959261 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EFDE82587712F00959261 /* TextFieldExtension.swift */; };
@@ -78,6 +83,11 @@
 		17723C392542D527005AC55F /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		17723C3D2542D68E005AC55F /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		177865EC2624758200087599 /* ModalDelegationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDelegationVC.swift; sourceTree = "<group>"; };
+		179E3FDE2629BA2E00F65E2E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		179E3FE32629BBEB00F65E2E /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		179E3FE62629BBFB00F65E2E /* EarthquakeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeService.swift; sourceTree = "<group>"; };
+		179E3FE92629BC0900F65E2E /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		179E3FEC2629BC1400F65E2E /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		179EFDE22587652E00959261 /* DelegationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationVC.swift; sourceTree = "<group>"; };
 		179EFDE525876B5100959261 /* DelegationModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegationModalVC.swift; sourceTree = "<group>"; };
 		179EFDE82587712F00959261 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -155,6 +165,8 @@
 		174C0339244ECF2600FDD664 /* MediumDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				179E3FE22629BB8400F65E2E /* View Models */,
+				179E3FDD2629BA1A00F65E2E /* Protocols */,
 				1728387E25BF02CA00A90E8C /* Helpers */,
 				170EB26A2553F8070055E6C2 /* KeychainItemAccessibility.swift */,
 				170EB26D2553F82E0055E6C2 /* KeychainWrapper.swift */,
@@ -162,7 +174,7 @@
 				17723C342542D47E005AC55F /* Networking */,
 				1710B4FF2484D7DE0027DC5F /* MediumDemoApp.entitlements */,
 				174C0351244ED2AE00FDD664 /* Models */,
-				17678EFE247533F300242565 /* View Controllers */,
+				17678EFE247533F300242565 /* Controllers */,
 				17678EFF2475340800242565 /* Views */,
 				174C033A244ECF2600FDD664 /* AppDelegate.swift */,
 				174C033C244ECF2600FDD664 /* SceneDelegate.swift */,
@@ -187,7 +199,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		17678EFE247533F300242565 /* View Controllers */ = {
+		17678EFE247533F300242565 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				176979C72626F5B6009907D3 /* Memory Management */,
@@ -204,7 +216,7 @@
 				1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */,
 				17C2B23E25C040CD0044BF91 /* Earthquake */,
 			);
-			path = "View Controllers";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		17678EFF2475340800242565 /* Views */ = {
@@ -255,6 +267,10 @@
 			isa = PBXGroup;
 			children = (
 				17723C352542D4BB005AC55F /* Webservice.swift */,
+				179E3FE32629BBEB00F65E2E /* CountryService.swift */,
+				179E3FE62629BBFB00F65E2E /* EarthquakeService.swift */,
+				179E3FE92629BC0900F65E2E /* WeatherService.swift */,
+				179E3FEC2629BC1400F65E2E /* NewsService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -266,6 +282,21 @@
 				179EFDE82587712F00959261 /* TextFieldExtension.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		179E3FDD2629BA1A00F65E2E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				179E3FDE2629BA2E00F65E2E /* BaseVC.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		179E3FE22629BB8400F65E2E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		17C2B23A25C0374A0044BF91 /* Earthquake */ = {
@@ -419,19 +450,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179E3FEA2629BC0900F65E2E /* WeatherService.swift in Sources */,
 				17D8609A2546D09600C59DEC /* CountryCell.swift in Sources */,
 				17C2B23C25C0375E0044BF91 /* Earthquake.swift in Sources */,
 				17723C3A2542D527005AC55F /* Country.swift in Sources */,
 				176979CD2626F6C1009907D3 /* MemoryManagement.swift in Sources */,
 				176979CA2626F5DB009907D3 /* Memory.swift in Sources */,
 				17FD9ACA25C165040080A62A /* EarthquakeDetails.swift in Sources */,
+				179E3FE42629BBEB00F65E2E /* CountryService.swift in Sources */,
 				177865ED2624758200087599 /* ModalDelegationVC.swift in Sources */,
 				174C033F244ECF2600FDD664 /* ViewController.swift in Sources */,
 				170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */,
+				179E3FE72629BBFB00F65E2E /* EarthquakeService.swift in Sources */,
 				17678F012475342E00242565 /* HomeVC.swift in Sources */,
 				1728387C25BF02A100A90E8C /* OptionalsDemoVC.swift in Sources */,
 				17BDB16F254C1B5A00651816 /* ApplePayVC.swift in Sources */,
 				170EB26B2553F8070055E6C2 /* KeychainItemAccessibility.swift in Sources */,
+				179E3FED2629BC1400F65E2E /* NewsService.swift in Sources */,
 				170EB2682553E7450055E6C2 /* SecureVC.swift in Sources */,
 				17678F0524753E7800242565 /* DemoCell.swift in Sources */,
 				174C0345244ECF2600FDD664 /* MediumDemoApp.xcdatamodeld in Sources */,
@@ -440,6 +475,7 @@
 				17E4F3D22471587500B144D8 /* ConversionRate.swift in Sources */,
 				17D8609D2546F64400C59DEC /* CountryVC.swift in Sources */,
 				17DFEF3B2454AB2A00EA762B /* Source.swift in Sources */,
+				179E3FDF2629BA2E00F65E2E /* BaseVC.swift in Sources */,
 				17B99EA225483CA1006834FB /* CountryDetails.swift in Sources */,
 				17E4F3D02471584900B144D8 /* CurrencyRate.swift in Sources */,
 				17C2B24425C047C90044BF91 /* EarthquakesCell.swift in Sources */,
