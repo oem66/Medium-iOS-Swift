@@ -50,6 +50,8 @@
 		17DFEF3B2454AB2A00EA762B /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFEF3A2454AB2A00EA762B /* Source.swift */; };
 		17E4F3D02471584900B144D8 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4F3CF2471584900B144D8 /* CurrencyRate.swift */; };
 		17E4F3D22471587500B144D8 /* ConversionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4F3D12471587500B144D8 /* ConversionRate.swift */; };
+		17EAB1D426709C1600D83152 /* CombineDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAB1D326709C1600D83152 /* CombineDemo.swift */; };
+		17EAB1D626709E4400D83152 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAB1D526709E4400D83152 /* APIService.swift */; };
 		17FB2C53262A1E83009631CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB2C52262A1E83009631CA /* AppCoordinator.swift */; };
 		17FB2C57262A2145009631CA /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB2C56262A2145009631CA /* Storyboarded.swift */; };
 		17FD9ACA25C165040080A62A /* EarthquakeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD9AC925C165040080A62A /* EarthquakeDetails.swift */; };
@@ -104,6 +106,8 @@
 		17DFEF3A2454AB2A00EA762B /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		17E4F3CF2471584900B144D8 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		17E4F3D12471587500B144D8 /* ConversionRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionRate.swift; sourceTree = "<group>"; };
+		17EAB1D326709C1600D83152 /* CombineDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemo.swift; sourceTree = "<group>"; };
+		17EAB1D526709E4400D83152 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		17FB2C52262A1E83009631CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		17FB2C56262A2145009631CA /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		17FD9AC925C165040080A62A /* EarthquakeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDetails.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				179EFDE525876B5100959261 /* DelegationModalVC.swift */,
 				1728387B25BF02A100A90E8C /* OptionalsDemoVC.swift */,
 				17C2B23E25C040CD0044BF91 /* Earthquake */,
+				17EAB1D326709C1600D83152 /* CombineDemo.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				179E3FE62629BBFB00F65E2E /* EarthquakeService.swift */,
 				179E3FE92629BC0900F65E2E /* WeatherService.swift */,
 				179E3FEC2629BC1400F65E2E /* NewsService.swift */,
+				17EAB1D526709E4400D83152 /* APIService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -478,7 +484,9 @@
 				17FB2C57262A2145009631CA /* Storyboarded.swift in Sources */,
 				170EB26E2553F82E0055E6C2 /* KeychainWrapper.swift in Sources */,
 				179E3FE72629BBFB00F65E2E /* EarthquakeService.swift in Sources */,
+				17EAB1D426709C1600D83152 /* CombineDemo.swift in Sources */,
 				17678F012475342E00242565 /* HomeVC.swift in Sources */,
+				17EAB1D626709E4400D83152 /* APIService.swift in Sources */,
 				1728387C25BF02A100A90E8C /* OptionalsDemoVC.swift in Sources */,
 				17BDB16F254C1B5A00651816 /* ApplePayVC.swift in Sources */,
 				170EB26B2553F8070055E6C2 /* KeychainItemAccessibility.swift in Sources */,

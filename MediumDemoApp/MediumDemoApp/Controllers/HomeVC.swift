@@ -144,7 +144,8 @@ class HomeVC: UIViewController, Storyboarded {
     }
     
     @objc func tableViewButtonTapped() {
-        navigationController?.pushViewController(DemoTableViewVC(), animated: true)
+//        navigationController?.pushViewController(DemoTableViewVC(), animated: true)
+        navigationController?.pushViewController(CombineDemoVC(), animated: true)
     }
     
     @objc func countriesButtonTapped() {
