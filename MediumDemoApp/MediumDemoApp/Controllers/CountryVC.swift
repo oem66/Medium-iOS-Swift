@@ -121,7 +121,7 @@ extension CountryVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Network Call
 extension CountryVC {
     private func getData() {
-        Webservice().getAllCountries { result in
+        Webservice.shared.getAllCountries { result in
             switch result {
             case .success(let countries):
                 DispatchQueue.main.async {

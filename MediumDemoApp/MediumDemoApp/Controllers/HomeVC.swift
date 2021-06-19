@@ -342,7 +342,7 @@ extension HomeVC: ASAuthorizationControllerDelegate {
 // MARK: -API Call Methods
 extension HomeVC {
     private func getCountries() {
-        Webservice().getAllCountries { result in
+        Webservice.shared.getAllCountries { result in
             switch result {
             case .success(let countries):
                 DispatchQueue.main.async {

@@ -100,7 +100,7 @@ class ApplePayVC: UIViewController {
     }
     
     @objc func completionButtonTapped() {
-        Webservice().fetchFakeData(isElectric: true, brand: "Volkswagen", model: "ID.3") { (message, isGoodOptionToBuy) in
+        Webservice.shared.fetchFakeData(isElectric: true, brand: "Volkswagen", model: "ID.3") { (message, isGoodOptionToBuy) in
             if isGoodOptionToBuy {
                 print(message)
             } else {

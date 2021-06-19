@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 import Combine
 
-class Webservice {
+final class Webservice {
+    
+    static let shared: Webservice = Webservice()
     
     private let oneDayAgoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
     private let oneWeekAgoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
     private let oneMonthAgoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"
+    
+    private init() {}
     
     func getAllCountries(completion: @escaping (Result<[Country],Error>) -> ()) {
         guard let url = URL(string: "\(APIEndpoints().GetAllCountries)") else {

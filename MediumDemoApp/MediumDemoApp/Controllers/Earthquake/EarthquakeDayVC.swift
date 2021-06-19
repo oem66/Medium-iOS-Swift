@@ -18,21 +18,44 @@ class EarthquakeDayVC: UITableViewController {
         }
     }
     
+    private var filteredEarthquakes = [EarthquakeDetails]()
+    lazy var searchController: UISearchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
         setupTableView()
         fetchData()
+        initSearchBar()
         print(earthquakesDay)
     }
     
-//    private func setupUI() {
-//        let editImage = UIImage(systemName: "lock")?.withTintColor(Constants().defaultColor, renderingMode: .alwaysOriginal)
-//        let rightBarButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: self, action: #selector(lockTapped))
-//        rightBarButton.image = editImage
-//
-//        self.navigationItem.rightBarButtonItem = rightBarButton
-//    }
+    private func initSearchBar() {
+        
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        definesPresentationContext = true
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+//        searchController.searchBar.scopeButtonTitles = ["Day", "Week", "Month"]
+        searchController.searchBar.delegate = self
+    }
+    
+    private func filterForSearchTextAndScopeButton(searchText: String, scopeButton: String = "Day") {
+        filteredEarthquakes = earthquakesDay.features?.filter({ earthquake in
+            if (searchController.searchBar.text != "") {
+                let searchTextMatch = earthquake.properties?.place?.lowercased().contains(searchText.lowercased())
+                return searchTextMatch!
+            }
+            return false
+        }) ?? [EarthquakeDetails]()
+        
+        tableView.reloadData()
+    }
     
     private func setupTableView() {
         tableView.delegate = self
@@ -45,7 +68,7 @@ class EarthquakeDayVC: UITableViewController {
     }
     
     private func fetchData() {
-        earthquakesDaySubscriber = Webservice().earthquakesDayPublisher.sink(receiveCompletion: { _ in }, receiveValue: { (earthquakes) in
+        earthquakesDaySubscriber = Webservice.shared.earthquakesDayPublisher.sink(receiveCompletion: { _ in }, receiveValue: { (earthquakes) in
             self.earthquakesDay = earthquakes
         })
     }
@@ -59,6 +82,11 @@ class EarthquakeDayVC: UITableViewController {
 
 extension EarthquakeDayVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if searchController.isActive {
+            return filteredEarthquakes.count
+        }
+        
         if let numberOfRows = earthquakesDay.features?.count {
             print("Number of rows for daily earthquakes is -> \(numberOfRows)")
             return numberOfRows
@@ -68,6 +96,18 @@ extension EarthquakeDayVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "earthquakeCell") as? EarthquakesCell else { return UITableViewCell() }
+        
+        if searchController.isActive {
+            if let title = filteredEarthquakes[indexPath.item].properties?.title,
+               let magnitude = filteredEarthquakes[indexPath.item].properties?.mag {
+                cell.configureCell(title: title, magnitude: magnitude)
+            } else {
+                cell.configureCell(title: "None", magnitude: 0)
+            }
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            return cell
+        }
+        
         if let title = earthquakesDay.features?[indexPath.item].properties?.title,
            let magnitude = earthquakesDay.features?[indexPath.item].properties?.mag {
             cell.configureCell(title: title, magnitude: Double(magnitude))
@@ -79,5 +119,19 @@ extension EarthquakeDayVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         pushViewController(earthquakeDetails: earthquakesDay.features![indexPath.row])
+    }
+}
+
+// SearchBar delegate methods
+extension EarthquakeDayVC: UISearchResultsUpdating, UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        debugPrint("Search text: \(searchText)")
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let searchText = searchBar.text!
+        
+        filterForSearchTextAndScopeButton(searchText: searchText)
     }
 }
