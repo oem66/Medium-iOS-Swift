@@ -15,6 +15,10 @@
 		17D10332267F373A001563E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D10330267F373A001563E4 /* LaunchScreen.storyboard */; };
 		17D10341267F3982001563E4 /* VehicleManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D10340267F3982001563E4 /* VehicleManagement.swift */; };
 		17D10344267F47E3001563E4 /* HealthManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D10343267F47E3001563E4 /* HealthManagement.swift */; };
+		17D1034826811522001563E4 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1034726811522001563E4 /* CountryService.swift */; };
+		17D1034D2681158C001563E4 /* CountryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1034C2681158C001563E4 /* CountryEndpoint.swift */; };
+		17D1034F26811CAE001563E4 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1034E26811CAE001563E4 /* NetworkingProtocol.swift */; };
+		17D1035226811F2D001563E4 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1035126811F2D001563E4 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		17D10333267F373A001563E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D10340267F3982001563E4 /* VehicleManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleManagement.swift; sourceTree = "<group>"; };
 		17D10343267F47E3001563E4 /* HealthManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManagement.swift; sourceTree = "<group>"; };
+		17D1034726811522001563E4 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		17D1034C2681158C001563E4 /* CountryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEndpoint.swift; sourceTree = "<group>"; };
+		17D1034E26811CAE001563E4 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
+		17D1035126811F2D001563E4 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,8 @@
 		17D10324267F3737001563E4 /* SwiftConcepts */ = {
 			isa = PBXGroup;
 			children = (
-				17D1033D267F3901001563E4 /* Extensions */,
+				17D1034926811556001563E4 /* Helpers */,
+				17D10345268114C8001563E4 /* Service */,
 				17D10339267F374A001563E4 /* Model */,
 				17D1033B267F375B001563E4 /* ViewControllers  */,
 				17D1033A267F374F001563E4 /* Views  */,
@@ -77,6 +86,7 @@
 		17D10339267F374A001563E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17D1035026811F23001563E4 /* Country */,
 				17D10342267F47C1001563E4 /* Health */,
 				17D1033F267F392E001563E4 /* Vehicle */,
 			);
@@ -127,6 +137,56 @@
 				17D10343267F47E3001563E4 /* HealthManagement.swift */,
 			);
 			path = Health;
+			sourceTree = "<group>";
+		};
+		17D10345268114C8001563E4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				17D103462681150C001563E4 /* Networking */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		17D103462681150C001563E4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				17D1034726811522001563E4 /* CountryService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		17D1034926811556001563E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				17D1034B26811578001563E4 /* Constants */,
+				17D1034A2681155F001563E4 /* Protocols */,
+				17D1033D267F3901001563E4 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		17D1034A2681155F001563E4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				17D1034E26811CAE001563E4 /* NetworkingProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		17D1034B26811578001563E4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				17D1034C2681158C001563E4 /* CountryEndpoint.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		17D1035026811F23001563E4 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				17D1035126811F2D001563E4 /* Country.swift */,
+			);
+			path = Country;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D1034826811522001563E4 /* CountryService.swift in Sources */,
+				17D1035226811F2D001563E4 /* Country.swift in Sources */,
 				17D10341267F3982001563E4 /* VehicleManagement.swift in Sources */,
+				17D1034D2681158C001563E4 /* CountryEndpoint.swift in Sources */,
 				17D1032A267F3737001563E4 /* ViewController.swift in Sources */,
 				17D10326267F3737001563E4 /* AppDelegate.swift in Sources */,
+				17D1034F26811CAE001563E4 /* NetworkingProtocol.swift in Sources */,
 				17D10344267F47E3001563E4 /* HealthManagement.swift in Sources */,
 				17D10328267F3737001563E4 /* SceneDelegate.swift in Sources */,
 			);

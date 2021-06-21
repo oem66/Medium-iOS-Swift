@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,14 @@ class ViewController: UIViewController {
     let iphone12Pro = DataSource.Apple(Device.smartphone("Apple iPhone 12 Pro"))
     let fitBitWatch = DataSource.FitBit(Device.smartwatch("FitBit Versa 3"))
     
+    private var countriesSubscriber: AnyCancellable?
+    private var countries = [Country]() {
+        didSet {
+//            tableView.reloadData()
+            print(countries)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +32,8 @@ class ViewController: UIViewController {
         
         checkVehicles()
         healthDataImport()
+        
+        getCountries()
     }
     
     fileprivate func checkVehicles() {
@@ -41,5 +52,27 @@ class ViewController: UIViewController {
         view.backgroundColor = .tertiarySystemBackground
     }
 
+    private func getCountries() {
+        countriesSubscriber = CountryService.shared.getAllCountries().sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                print("Data downloaded!")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }, receiveValue: { [weak self] countries in
+            guard let self = self else { return }
+            self.countries = countries
+            print("Countries = \(countries)")
+        })
+    }
+    
+    private func getCountriesByCapital(capitalCity: String) {
+        
+    }
+    
+    private func getCountriesByRegion(region: Regions) {
+        
+    }
 }
 
